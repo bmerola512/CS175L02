@@ -4,14 +4,18 @@ import java.util.Scanner;
 
 public class DiscountCalc2_Electric_Boogaloov2 {
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-
+      //  Scanner in = new Scanner(System.in);
+        boolean reallyLeave = false;
         double discount = 0;
+        double spent = 8;
 // user input            
-        System.out.println("Please enter the cost of your groceries. To end enter 0 or a non-number: ");
         
-            while (in.hasNextDouble()) {
-                double spent = in.nextDouble();
+       while (reallyLeave == false) {
+           Scanner in = new Scanner(System.in);
+    	   System.out.println("Please enter the cost of your groceries. To end enter 0: ");
+            
+    	   	while (in.hasNextDouble()) {
+                spent = in.nextDouble();
                 
 // if and buts               
                 if (spent >= 10 && spent <= 1000) {
@@ -47,16 +51,17 @@ public class DiscountCalc2_Electric_Boogaloov2 {
                 else if (spent == 0) {
                     
                 	System.out.println("Exiting");
+                	reallyLeave = true;
                     break;
                 }
                 
                 else {
                     System.out.println("Amount has to be within $10 and $1000 to be eligible. Enter another amount or 0 to end.");
                 }
-
+                
             }
-            
-            System.out.println("Exited program");
-
+    	   	
+       }
+       System.out.println("Exited program");
     }
 }
